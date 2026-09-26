@@ -1,0 +1,8 @@
+import { Search } from "lucide-react";
+import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Input } from "@/components/ui/input";
+import { ProductCard } from "@/components/store/product-card";
+import { searchProducts } from "@/lib/products";
+export const Route = createFileRoute("/search")({ head: () => ({ meta: [{ title: "Search — RŌSEN" }, { name: "description", content: "Search the complete RŌSEN home collection." }, { property: "og:title", content: "Search — RŌSEN" }, { property: "og:description", content: "Find furniture, lighting, textiles and décor." }, { property: "og:type", content: "website" }, { name: "twitter:card", content: "summary_large_image" }] }), component: SearchPage });
+function SearchPage() { const [term, setTerm] = useState(""); const results = searchProducts(term); return <div className="site-container"><header className="page-intro"><p className="eyebrow">Find a piece</p><h1 className="mt-4 font-display text-5xl sm:text-6xl">Search</h1><div className="relative mt-8 max-w-2xl"><Search className="absolute left-4 top-1/2 size-5 -translate-y-1/2 text-muted-foreground"/><Input autoFocus value={term} onChange={(event) => setTerm(event.target.value)} placeholder="Try chair, linen, lamp or outdoor" className="h-14 rounded-none pl-12 text-base" aria-label="Search catalogue" /></div></header><p className="mb-7 text-sm text-muted-foreground">{term ? `${results.length} results for “${term}”` : "All 36 pieces"}</p><div className="product-grid pb-12">{results.map((product) => <ProductCard key={product.id} product={product} />)}</div></div>; }
