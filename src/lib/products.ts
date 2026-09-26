@@ -34,6 +34,7 @@ import olive from "@/assets/products/olive-ceramic-candle-holder.jpg";
 import nia from "@/assets/products/nia-handcrafted-mirror.jpg";
 import tara from "@/assets/products/tara-woven-outdoor-chair.jpg";
 import rhea from "@/assets/products/rhea-teak-garden-stool.jpg";
+import freya from "@/assets/products/freya-linen-sofa.jpg";
 
 export type Category = "Furniture" | "Lighting" | "Textiles" | "Décor" | "Outdoor";
 export type Product = {
@@ -80,6 +81,7 @@ export const products: Product[] = [
   make("nia-handcrafted-mirror", "Nia Handcrafted Mirror", "Décor", 2600, "Natural Timber", nia, "An arched mirror framed by hand-shaped timber with visible grain.", "Mango wood, mirror glass", "62 W × 4 D × 96 H cm", "Clean glass with ammonia-free spray."),
   make("tara-woven-outdoor-chair", "Tara Woven Outdoor Chair", "Outdoor", 3800, "Natural Rope", tara, "A relaxed outdoor chair woven for comfort and open-air living.", "Teak, UV-resistant woven rope", "68 W × 74 D × 75 H cm", "Cover in heavy rain; clean with mild soap."),
   make("rhea-teak-garden-stool", "Rhea Teak Garden Stool", "Outdoor", 2000, "Natural Teak", rhea, "A solid garden stool with organic grain and a sculpted waist.", "Plantation teak", "36 Ø × 45 H cm", "Clean gently; teak will silver outdoors."),
+  make("freya-linen-sofa", "Freya Linen Sofa", "Furniture", 4500, "Oat Linen", freya, "A deep-seated three-seat sofa with rolled arms and turned oak legs.", "Kiln-dried hardwood frame, linen upholstery, turned oak legs", "210 W × 92 D × 82 H cm", "Vacuum gently; blot spills immediately."),
 ];
 
 export const formatPrice = (value: number) => new Intl.NumberFormat("en-IN", { style: "currency", currency: "INR", maximumFractionDigits: 0 }).format(value);
