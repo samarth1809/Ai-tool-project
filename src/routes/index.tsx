@@ -17,7 +17,10 @@ export const Route = createFileRoute("/")({
 
 // IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
-  const selectProducts = (ids: string[]): Product[] => ids.map(getProduct).filter((product): product is Product => product !== undefined);
+  const selectProducts = (ids: string[]): Product[] => ids.flatMap((id) => {
+    const product = getProduct(id);
+    return product ? [product] : [];
+  });
   const featured = selectProducts(["isla-linen-lounge-chair", "mira-cane-accent-chair", "lumi-linen-table-lamp", "theo-travertine-tray"]);
   const newPieces = selectProducts(["avery-boucle-bench", "sora-woven-pendant", "elsie-linen-table-runner", "tara-woven-outdoor-chair"]);
   const heroProduct = getProduct("mira-cane-accent-chair");
