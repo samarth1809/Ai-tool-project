@@ -3,6 +3,7 @@ import { Link, createFileRoute } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ProductCard } from "@/components/store/product-card";
 import { getProduct, products, type Product } from "@/lib/products";
+import heroAntique from "@/assets/hero-antique-piece.jpg";
 
 export const Route = createFileRoute("/")({
   head: () => ({ meta: [
